@@ -2,7 +2,10 @@ NAME    = libasm.a
 TESTS   = tests
 CC      = nasm
 AR      = ar rcs
-FILES   = ft_bzero.asm ft_memset.asm booleans.asm ft_strlen.asm ft_strcpy.asm ft_strcmp.asm ft_write.asm ft_read.asm ft_strdup.asm
+FILES   =	ft_memcpy.asm ft_bzero.asm ft_memset.asm ft_memmove.asm	\
+		  	booleans.asm											\
+			ft_strlen.asm ft_strcpy.asm ft_strcmp.asm ft_strdup.asm	\
+			ft_write.asm ft_read.asm
 FLAGS   = -felf64
 CFLAGS  = -g -Wall -Wextra -Werror -Iinc
 SOURCE  = $(addprefix src/, $(FILES))

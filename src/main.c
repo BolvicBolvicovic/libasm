@@ -66,5 +66,9 @@ int main() {
 	}
 	printf("\e[0;32mft_bzero : Success\n\e[0;31m");
 
+	ft_memcpy(hi, "bibo", 4);
+	assert(ft_strcmp("bibo", hi) == 0);
+	printf("\e[0;32mft_memcpy: Success\n\e[0;31m");
+
 	return 0;
 }
