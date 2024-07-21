@@ -39,5 +39,32 @@ int main() {
 	printf("\e[0;32m%s", dup);
 	free(dup);
 
+	assert(ft_isalpha('a') == 1);
+	assert(ft_isdigit('5') == 1);
+	assert(ft_isalnum('G') == 1);
+	assert(ft_isascii('~') == 1);
+	assert(ft_isprint('"') == 1);
+	assert(ft_isalpha('\'') == 0);
+	assert(ft_isdigit('e') == 0);
+	assert(ft_isascii(255) == 0);
+	assert(ft_isprint('\n') == 0);
+	assert(ft_isalnum('&') == 0);
+	printf("\e[0;32mBooleans : Success\n\e[0;31m");
+
+	
+	char	hi[5];
+	int		i = -1;
+	ft_memset(hi, 'a', 5);
+	while (++i < 5) {
+		assert(hi[i] == 'a');
+	}
+	printf("\e[0;32mft_memset: Success\n\e[0;31m");
+
+	ft_bzero(hi, 5);
+	while (++i < 5) {
+		assert(hi[i] == '\0');
+	}
+	printf("\e[0;32mft_bzero : Success\n\e[0;31m");
+
 	return 0;
 }
