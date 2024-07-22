@@ -70,5 +70,8 @@ int main() {
 	assert(ft_strcmp("bibo", hi) == 0);
 	printf("\e[0;32mft_memcpy: Success\n\e[0;31m");
 
+	ft_memmove(hi + 1, hi, 2);
+	assert(ft_strcmp("bbio", hi) == 0);
+	printf("\e[0;32mft_memmove: Success\n\e[0;31m");
 	return 0;
 }
