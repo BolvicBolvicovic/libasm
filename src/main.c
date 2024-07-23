@@ -72,6 +72,9 @@ int main() {
 
 	ft_memmove(hi + 1, hi, 2);
 	assert(ft_strcmp("bbio", hi) == 0);
+	int	nbs[3] = {1, 2, 3};
+	ft_memmove(nbs + 1, nbs, 2 * sizeof(int));
+	assert(nbs[0] == 1 && nbs[1] == 1 && nbs[2] == 2);
 	printf("\e[0;32mft_memmove: Success\n\e[0;31m");
 	return 0;
 }
