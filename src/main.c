@@ -76,5 +76,13 @@ int main() {
 	ft_memmove(nbs + 1, nbs, 2 * sizeof(int));
 	assert(nbs[0] == 1 && nbs[1] == 1 && nbs[2] == 2);
 	printf("\e[0;32mft_memmove: Success\n\e[0;31m");
+
+	char	hello[4] = "test";
+	char	mama[4] = "mama";
+	size_t	size = ft_strlcpy(hello, mama, 2);
+	assert(size == ft_strlen(mama));
+	assert(ft_strcmp(hello, "m") == 0);
+	printf("\e[0;32mft_strlcpy: Success\n\e[0;31m");
+
 	return 0;
 }
