@@ -84,5 +84,14 @@ int main() {
 	assert(ft_strcmp(hello, "m") == 0);
 	printf("\e[0;32mft_strlcpy: Success\n\e[0;31m");
 
+	char	helo[12] = "test\0";
+	char	mam[5] = "mama\0";
+	size_t	siz = ft_strlcat(helo, mam, 3);
+	assert(siz == 3);
+	assert(ft_strcmp(helo, "test") == 0);
+	siz = ft_strlcat(helo, mam, 999);
+	assert(siz == 8);
+	assert(ft_strcmp(helo, "testmama") == 0);
+	printf("\e[0;32mft_strlcat: Success\n\e[0;31m");
 	return 0;
 }
