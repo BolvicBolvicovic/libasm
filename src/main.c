@@ -120,5 +120,9 @@ int main() {
 	assert(ft_strnstr(helo, mam, 25) == helo + 4);
 	assert(ft_strnstr(helo, mam, 5) == 0);
 	printf("\e[0;32mft_strnstr: Success\n\e[0;31m");
+
+	assert(ft_atoi("5") == 5);
+	assert(ft_atoi("-5") == -5);
+	printf("\e[0;32mft_atoi   : Success\n\e[0;31m");
 	return 0;
 }

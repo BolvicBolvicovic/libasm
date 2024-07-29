@@ -1,52 +1,42 @@
 				global	ft_strnstr
 				extern	ft_strlen
+				extern	ft_strncmp
 				section	.text
 ft_strnstr:
 				push	rdi
 				push	rsi
-				mov		rbx, rdx
+				mov		r15, rdx
 				mov		rdi, rsi
 				call	ft_strlen
-				pop		rcx
-				pop		rdx
 				test	rax, rax
 				jz		.ret
-				xor		rdi, rdi
+				mov		r12, rax
+				pop		rsi
+				pop		rdi
+				push	rdi
+				push	rsi
 	.loop:
-				test	rbx, rbx
+				cmp		r15, r12
+				jle		.xor_rax
+				test	r15, rdx
 				jz		.xor_rax
-				cmp		byte [rdx + rdi], 0
-				je		.xor_rax
-				xor		rsi, rsi
-		.cmp:
-					cmp		byte [rcx + rsi], 0
-					je		.end_cmp
-					cmp		byte [rdx + rsi], 0
-					je		.end_cmp
-					add		rsi, rdi
-					cmp		rbx, rsi
-					jae		.restore_rsi
-					sub		rsi, rdi
-					mov		al, [rcx + rsi]
-					add		rsi, rdi
-					mov		ah, [rdx + rsi]
-					sub		rsi, rdi
-					cmp		al, ah
-					jne		.end_cmp
-					jmp		.cmp
-		.restore_rsi:
-					sub		rsi, rdi
-		.end_cmp:
-					cmp		rsi, rbx
-					je		.found
-					inc		rdi
-					dec		rbx
-					jmp		.loop
+				mov		rdx, r15
+				call	ft_strncmp
+				pop		rsi
+				pop		rdi
+				test	rax, rax
+				je		.found
+				inc		rdi
+				dec		r15
+				push	rdi
+				push	rsi
+				jmp		.loop
 	.found:
-				add		rdx, rsi
-				mov		rax, rdx
+				mov		rax, rdi
 				ret
 	.xor_rax:
+				pop		rdi
+				pop		rsi
 				xor		rax, rax
 	.ret:
 				ret
