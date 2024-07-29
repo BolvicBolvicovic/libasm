@@ -8,7 +8,7 @@ FILES   =	ft_memcpy.asm ft_bzero.asm ft_memset.asm ft_memmove.asm	\
 			ft_strlcat.asm ft_strlcpy.asm ft_write.asm ft_read.asm	\
 			ft_strrchr.asm ft_strchr.asm ft_tolower.asm ft_toupper.asm \
 			ft_memcmp.asm ft_memchr.asm ft_strncmp.asm ft_strnstr.asm \
-			ft_atoi.asm
+			ft_atoi.asm ft_substr.asm
 FLAGS   = -g -felf64
 CFLAGS  = -g -Wall -Wextra -Werror -Iinc
 SOURCE  = $(addprefix src/, $(FILES))

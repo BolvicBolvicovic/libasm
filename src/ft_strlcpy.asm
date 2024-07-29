@@ -6,7 +6,7 @@ ft_strlcpy:
 				test	rdx, rdx
 				jz		.ret
 	.loop:
-				cmp		byte [rdi], 0
+				cmp		byte [rsi], 0
 				je		.ret
 				cmp		rdx, 1
 				je		.nulterm

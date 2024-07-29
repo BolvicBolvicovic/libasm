@@ -124,5 +124,8 @@ int main() {
 	assert(ft_atoi("5") == 5);
 	assert(ft_atoi("-5") == -5);
 	printf("\e[0;32mft_atoi   : Success\n\e[0;31m");
+
+	assert(ft_strcmp(ft_substr("test", 2, 2), "st") == 0);
+	printf("\e[0;32mft_substr : Success\n\e[0;31m");
 	return 0;
 }
