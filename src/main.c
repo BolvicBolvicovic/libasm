@@ -130,5 +130,8 @@ int main() {
 
 	assert(ft_strcmp(ft_strjoin("test\0", " sex\0"), "test sex\0") == 0);
 	printf("\e[0;32mft_strjoin: Success\n\e[0;31m");
+
+	assert(ft_strcmp(ft_strtrim("  test ", " "), "test") == 0);
+	printf("\e[0;32mft_strtrim: Success\n\e[0;31m");
 	return 0;
 }
