@@ -133,5 +133,12 @@ int main() {
 
 	assert(ft_strcmp(ft_strtrim("  test ", " "), "test") == 0);
 	printf("\e[0;32mft_strtrim: Success\n\e[0;31m");
+
+	char	**tab = ft_split("   hello   my  friend ", ' ');
+	assert(ft_strcmp("hello", tab[0]) == 0);
+	assert(ft_strcmp("my", tab[1]) == 0);
+	assert(ft_strcmp("friend", tab[2]) == 0);
+	printf("\e[0;32mft_split  : Success\n\e[0;31m");
+
 	return 0;
 }

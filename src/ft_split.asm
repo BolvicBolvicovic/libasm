@@ -43,19 +43,36 @@ allocate:
 				mov		rcx, rsi
 			.word:
 				cmp		byte [rsi], 0
-				je		.ret
+				je		.end
 				cmp		byte [rsi], dl
 				je		.alloc
 				inc		rsi
 				jmp		.word
 			.alloc:
-
-				
+				cmp		rsi, rcx
+				jle		.loop
+				push	rdi
+				push	rsi
+				push	rcx
+				push	rdx
+				mov		rdi, rcx
+				sub		rsi, rcx
+				mov		rdx, rsi
+				xor		rsi, rsi
+				call	ft_substr
+				pop		rdx
+				pop		rcx
+				pop		rsi
+				pop		rdi
+				mov		[rdi], rax
+				mov		rsi, rcx
+				add		rdi, 8
+				jmp		.loop
 	.end:
-			mov		[rdi], 0
+			mov		qword [rdi], 0
 
 tester:
-
+		
 ft_split:
 			test	rdi, rdi
 			je		.error
